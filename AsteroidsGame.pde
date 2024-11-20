@@ -2,7 +2,7 @@ Star[] dots = new Star[500];
 Asteroid[] rocks = new Asteroid[20];
 Spaceship yuh = new Spaceship();
 public void setup(){
-  fullScreen();
+  size(1280,1024);
   for(int i = 0; i < dots.length; i++){
     dots[i] = new Star();
   }
