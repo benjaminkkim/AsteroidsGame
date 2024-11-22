@@ -20,6 +20,6 @@ public class Asteroid{
   public void show(){
     noStroke();
     fill(myColor);
-    circle(myX,myY,50);
+    ellipse(myX,myY,30,30);
   }
 }
