@@ -6,7 +6,7 @@ public void setup(){
   for(int i = 0; i < dots.length; i++){
     dots[i] = new Star();
   }
-  for(int i = 0; i < asteroids.size(); i++){
+  for(int i = 0; i < 20; i++){
     asteroids.add(new Asteroid());
   }
 }
@@ -18,6 +18,7 @@ public void draw(){
   for(int i = 0; i < asteroids.size(); i++){
     asteroids.get(i).move();
     asteroids.get(i).show();
+    asteroids.get(i).turn(2.5);
   }
   if(accel){
     yuh.accelerate(0.3);
