@@ -1,7 +1,7 @@
 public class Asteroid extends Floater{
   private double Radius;
   public Asteroid(){
-    Radius = Math.random()*50;
+    Radius = (Math.random()*50)+20;
     corners = 6;
     xCorners = new int[6];
     yCorners = new int[6];
@@ -23,5 +23,20 @@ public class Asteroid extends Floater{
     myXspeed = Math.random()*5-2;
     myYspeed = Math.random()*5-2;
     myPointDirection = Math.random()*360;
+  }
+  public double getCenterX(){
+    return myCenterX;
+  }
+  public double getCenterY(){
+    return myCenterY;
+  }
+  public double getXspeed(){
+    return myXspeed;
+  }
+  public double getYspeed(){
+    return myYspeed;
+  }
+  public double getPointDirection(){
+    return myPointDirection;
   }
 }
