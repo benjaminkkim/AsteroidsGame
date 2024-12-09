@@ -1,6 +1,7 @@
 Star[] dots = new Star[500];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 Spaceship yuh = new Spaceship();
+ArrayList <Bullet> bullets = new ArrayList <Bullet>();
 public void setup(){
   size(1000,1000);
   for(int i = 0; i < dots.length; i++){
@@ -23,6 +24,10 @@ public void draw(){
     if(destroy < 55){
       asteroids.remove(i);
     }
+  }
+  for(int i = 0; i < bullets.size(); i++){
+    bullets.get(i).move();
+    bullets.get(i).show();
   }
   if(accel){
     yuh.accelerate(0.3);
@@ -76,4 +81,7 @@ public void keyReleased(){
   if(key == 's'){
     deaccel = false;
   }
+}
+public void mousePressed(){
+  bullets.add(new Bullet(yuh));
 }
