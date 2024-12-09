@@ -19,6 +19,10 @@ public void draw(){
     asteroids.get(i).move();
     asteroids.get(i).show();
     asteroids.get(i).turn(2.5);
+    float destroy = dist((float)yuh.getCenterX(),(float)yuh.getCenterY(),(float)asteroids.get(i).getCenterX(),(float)asteroids.get(i).getCenterY());
+    if(destroy < 55){
+      asteroids.remove(i);
+    }
   }
   if(accel){
     yuh.accelerate(0.3);
@@ -54,6 +58,9 @@ public void keyPressed(){
   }
   if(key == 'r'){
     yuh.hyperspace();
+  }
+  if(key == ' '){
+    asteroids.add(new Asteroid());
   }
 }
 public void keyReleased(){
