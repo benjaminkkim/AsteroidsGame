@@ -20,14 +20,20 @@ public void draw(){
     asteroids.get(i).move();
     asteroids.get(i).show();
     asteroids.get(i).turn(2.5);
-    float destroy = dist((float)yuh.getCenterX(),(float)yuh.getCenterY(),(float)asteroids.get(i).getCenterX(),(float)asteroids.get(i).getCenterY());
-    if(destroy < 55){
+    float shipDestroy = dist((float)yuh.getCenterX(),(float)yuh.getCenterY(),(float)asteroids.get(i).getCenterX(),(float)asteroids.get(i).getCenterY());
+    if(i < asteroids.size() && shipDestroy < 55){
       asteroids.remove(i);
+      i--;
     }
   }
   for(int i = 0; i < bullets.size(); i++){
     bullets.get(i).move();
     bullets.get(i).show();
+    float bulletDestroy = dist((float)yuh.getCenterX(),(float)yuh.getCenterY(),(float)bullets.get(i).getCenterX(),(float)bullets.get(i).getCenterY());
+    if(i < bullets.size() && bulletDestroy < 20){
+                                   
+      i--;
+    }
   }
   if(accel){
     yuh.accelerate(0.3);
