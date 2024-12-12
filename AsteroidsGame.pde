@@ -30,7 +30,7 @@ public void draw(){
     bullets.get(i).move();
     bullets.get(i).show();
     for(int j = 0; j < asteroids.size(); j++){
-      if(i > 0 && dist((float)asteroids.get(j).getCenterX(),(float)asteroids.get(j).getCenterY(),(float)bullets.get(i).getCenterX(),(float)bullets.get(i).getCenterY()) <= 50){
+      if(i > 0 && dist((float)asteroids.get(j).getCenterX(),(float)asteroids.get(j).getCenterY(),(float)bullets.get(i).getCenterX(),(float)bullets.get(i).getCenterY()) <= 30){
         asteroids.remove(j);
         j--;
         bullets.remove(i);
